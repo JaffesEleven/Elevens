@@ -69,4 +69,12 @@ public class DeckTester
         assertEquals(12, deck2.size());
         assertEquals(20, deck3.size());
     }
+    
+    @Test
+    public void testDeal()
+    {
+        assertEquals("King", deck1.deal().rank());
+        assertEquals("Diamonds", deck1.deal().suit());
+        assertEquals(5, deck1.deal().pointValue());
+    }
 }
