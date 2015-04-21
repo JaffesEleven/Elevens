@@ -17,6 +17,4 @@ comment4.text=\r\n\ Deals\ a\ card\ from\ this\ deck.\r\n\ @return\ the\ card\ j
 comment5.params=
 comment5.target=java.lang.String\ toString()
 comment5.text=\r\n\ Generates\ and\ returns\ a\ string\ representation\ of\ this\ deck.\r\n\ @return\ a\ string\ representation\ of\ this\ deck.\r\n
-comment6.params=args
-comment6.target=void\ main(java.lang.String[])
-numComments=7
+numComments=6

@@ -125,25 +125,4 @@ public class Deck {
         rtn = rtn + "\n";
         return rtn;
     }
-    
-    public static void main(String[] args)
-    {
-        String[] rank1 = {"Jack", "Queen", "King"};
-        String[] suit1 = {"Hearts", "Diamonds"};
-        int[] value1 = {5, 6, 7};
-        String[] rank2 = {"Frank", "Ralph", "George", "Felipe"};
-        String[] suit2 = {"Fish", "Dogs", "Cats"};
-        int[] value2 = {4, 3, 2, 1};
-        String[] rank3 = {"Harry", "Hermione", "Ronald", "Hagrid", "Severous"};
-        String[] suit3 = {"Super", "Ew", "Awesome", "Muggle"};
-        int[] value3 = {5, 9, 10, 11, 12};
-        Deck deck1 = new Deck(rank1, suit1, value1);
-        Deck deck2 = new Deck(rank2, suit2, value2);
-        Deck deck3 = new Deck(rank3, suit3, value3);
-    
-        System.out.println(deck1.toString());
-        System.out.println(deck2.toString());
-        System.out.println(deck3.toString());
-    }
-    
 }
