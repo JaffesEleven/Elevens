@@ -72,9 +72,21 @@ public class DeckTester
     
     @Test
     public void testDeal()
-    {
-        assertEquals("King", deck1.deal().rank());
-        assertEquals("Diamonds", deck1.deal().suit());
-        assertEquals(5, deck1.deal().pointValue());
+    {   
+        Card Deck1 = deck1.deal();
+        Card Deck2 = deck2.deal();
+        Card Deck3 = deck3.deal();
+        
+        assertEquals("King", Deck1.rank());
+        assertEquals("Diamonds", Deck1.suit());
+        assertEquals(7, Deck1.pointValue());
+        
+        assertEquals("Felipe", Deck2.rank());
+        assertEquals("Cats", Deck2.suit());
+        assertEquals(1, Deck2.pointValue());
+        
+        assertEquals("Severous", Deck3.rank());
+        assertEquals("Muggle", Deck3.suit());
+        assertEquals(12, Deck3.pointValue());
     }
 }
