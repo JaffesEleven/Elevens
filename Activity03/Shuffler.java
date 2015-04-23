@@ -62,19 +62,26 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		int[] shuffled = new int[52];
-		int k = 0;
-		for(int j = 0; j < 26; j++)
+		int upTo = (values.length+1)/2;
+		int[] values1=new int[values.length];
+		int p=0;
+		for (int e:values)
 		{
-		    shuffled[j] = values[k];
-		    k = k + 2;
-		}
-		k = 1;
-		for(int j = 26; j < 52; j++)
+		    values1[p]=e;
+		    p++;   
+		}   
+		int k=0;
+		for (int j=0;j<upTo;j++) 
 		{
-		    shuffled[j] = values[k];
-		    k = k + 2;
-		}
+		     values[k]= values1[j];
+		     k+=2;
+		} 
+		k=1;
+		for (int j=upTo+1;j<values.length;j++) 
+		{
+		     values[k]= values1[j];
+		     k+=2;
+		} 
 	}
 
 	/**
@@ -89,10 +96,20 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		for(int k = 51; k > 0; k--)
+		int empty = -1;
+		int[] shuffled = new int[52];
+		for (int i=0; i<52; i++){
+		    shuffled[i]=values[i];
+		    values[i]=-1;    
+		  }    
+		for (int k=0;k<52;k++) 
 		{
-		    int r = (int)(Math.random()*k) + 1 ;
-		    values[k] = values[r];
-		}
+		   int j = (int)(52*Math.random());
+		   while (values[j]!=empty)
+		   {
+		       j = (int)(52*Math.random());
+		   }
+		   values[j]=shuffled[k];    
+		} 
 	}
 }
