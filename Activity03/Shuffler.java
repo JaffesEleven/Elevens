@@ -102,7 +102,7 @@ public class Shuffler {
 		for (int k = 0;k < 52;k++) 
 		{
 		   int j = (int)(52*Math.random());
-		   while (values[j]!=empty)
+		   while (values[j] != empty)
 		   {
 		       j = (int)(52*Math.random());
 		   }
