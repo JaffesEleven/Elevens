@@ -60,7 +60,7 @@ public class ElevensBoard extends Board {
             return containsJQK(selectedCards);
         }else{
             return false;}
-            
+
     }
 
     /**
@@ -73,8 +73,8 @@ public class ElevensBoard extends Board {
      */
     @Override
     public boolean anotherPlayIsPossible() {
-       List<Integer> cIndexes = cardIndexes();
-       return (containsJQK(cIndexes)||containsPairSum11(cIndexes));
+        List<Integer> cIndexes = cardIndexes();
+        return (containsJQK(cIndexes)||containsPairSum11(cIndexes));
     }
 
     /**
@@ -86,18 +86,28 @@ public class ElevensBoard extends Board {
      *              contain an 11-pair; false otherwise.
      */
     private boolean containsPairSum11(List<Integer> selectedCards) {
-       
+        Card one = cardAt(selectedCards.get(0));
+        Card two = cardAt(selectedCards.get(1));
+        if((one.pointValue()+ two.pointValue())==11){
+            return true;}
+        else{
+            return false;}
+
     }
 
     /**
      * Check for a JQK in the selected cards.
-     * @param selectedCards selects a subset of this board.  It is list
+     * @param selectedCards selects a sjqk.add(cardAt(selectedCards.get(1)));ubset of this board.  It is list
      *                      of indexes into this board that are searched
      *                      to find a JQK group.
      * @return true if the board entries in selectedCards
      *              include a jack, a queen, and a king; false otherwise.
      */
     private boolean containsJQK(List<Integer> selectedCards) {
-       
+        List<Card> jqk = new ArrayList<Card>();
+        jqk.add(cardAt(selectedCards.get(0)));
+        jqk.add(cardAt(selectedCards.get(1)));
+        jqk.add(cardAt(selectedCards.get(2)));
+        
     }
 }
